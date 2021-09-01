@@ -26,7 +26,7 @@ app.post("/order",async(req,res)=>{
     if(req.body.fecha && req.body.precio && req.body.cantidad && req.body.id_producto && req.body.id_usuario){
         const order=new Order(req.body);
         order.save()
-        .then(res.status(200).json({success:"Libro creado correctamente"}))
+        .then(res.status(200).json({mensaje:"Orden creada correctamente"}))
         .catch(err=>res.status(400).json(err));
     }else{
         res.status(400).json({ error: 'Todos los campos deben estar llenos' })
