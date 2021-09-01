@@ -3,7 +3,7 @@ const mongoose=require('mongoose');
 const Schema=mongoose.Schema;
 
 const Order=new Schema({
-    fecha:Date,
+    fecha:String,
     precio:Number,
     cantidad:Number,
     id_producto:Number,
