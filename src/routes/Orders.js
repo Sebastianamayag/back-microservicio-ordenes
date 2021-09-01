@@ -9,9 +9,9 @@ const app = express();
 //     res.status(200).json({  libros });
 //   });
 // })
-app.get("/order/:id",async(req,res)=>{
-  if(req.params.id){
-    const order=await Order.findOne({ _id: req.params.id })
+app.get("/order",async(req,res)=>{
+  if(req.body.id){
+    const order=await Order.findOne({ _id: req.body.id })
     if(order){
         res.status(200).json({ order })
     }else{
